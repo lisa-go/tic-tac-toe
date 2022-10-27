@@ -1,3 +1,15 @@
 body {
     background-color: lavender;
 }
+
+#board {
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    width: fit-content;
+}
+
+grid {
+    border: 1px solid black;
+}
