@@ -54,96 +54,112 @@ function gameResult() {
     GameBoard.board[1] == 'X' &&
     GameBoard.board[2] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[3] == 'X' && 
     GameBoard.board[4] == 'X' &&
     GameBoard.board[5] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[6] == 'X' && 
     GameBoard.board[7] == 'X' &&
     GameBoard.board[8] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[0] == 'X' && 
     GameBoard.board[3] == 'X' &&
     GameBoard.board[6] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[1] == 'X' && 
     GameBoard.board[4] == 'X' &&
     GameBoard.board[7] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[2] == 'X' && 
     GameBoard.board[5] == 'X' &&
     GameBoard.board[8] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[2] == 'X' && 
     GameBoard.board[4] == 'X' &&
     GameBoard.board[6] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[0] == 'X' && 
     GameBoard.board[4] == 'X' &&
     GameBoard.board[8] == 'X') {
         console.log('P1: X wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[0] == 'O' && 
     GameBoard.board[1] == 'O' &&
     GameBoard.board[2] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[3] == 'O' && 
     GameBoard.board[4] == 'O' &&
     GameBoard.board[5] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[6] == 'O' && 
     GameBoard.board[7] == 'O' &&
     GameBoard.board[8] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[0] == 'O' && 
     GameBoard.board[3] == 'O' &&
     GameBoard.board[6] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[1] == 'O' && 
     GameBoard.board[4] == 'O' &&
     GameBoard.board[7] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[2] == 'O' && 
     GameBoard.board[5] == 'O' &&
     GameBoard.board[8] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[2] == 'O' && 
     GameBoard.board[4] == 'O' &&
     GameBoard.board[6] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[0] == 'O' && 
     GameBoard.board[4] == 'O' &&
     GameBoard.board[8] == 'O') {
         console.log('P2: O wins');
+        clearBoard.forEach(endGame);
     }
 
     else if (GameBoard.board[0] !== '' &&
@@ -156,7 +172,18 @@ function gameResult() {
     GameBoard.board[7] !== '' &&
     GameBoard.board[8] !== '') {
         console.log ('draw');
+        clearBoard.forEach(endGame);
     }
 }
 
+let clearBoard = document.querySelectorAll('grid');
 
+/* function to end a game */
+function endGame(element) {
+    GameBoard.board = 
+    ['','','',
+    '','','',
+    '','',''];
+    element.textContent = '';
+    pTurn = 0;
+}
