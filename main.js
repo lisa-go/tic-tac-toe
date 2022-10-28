@@ -1,4 +1,6 @@
-const aContainer = document.querySelector('#content');
+const aContainer = document.querySelector('#board');
+const resultDisplay = document.createElement("resultDisplay");
+resultDisplay.classList.add("resultDisplay");
 
 let pTurn = 0;
 
@@ -49,122 +51,65 @@ function placeMarker(num) {
     }
 }
 
+
 /* function to determine if someone has won */
 function gameResult() {
-    const resultDisplay = document.createElement("resultDisplay");
-    resultDisplay.classList.add("resultDisplay");
-
     if (GameBoard.board[0] == 'X' && 
     GameBoard.board[1] == 'X' &&
-    GameBoard.board[2] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-        
-    }
-
-    else if (GameBoard.board[3] == 'X' && 
+    GameBoard.board[2] == 'X' ||
+    GameBoard.board[3] == 'X' && 
     GameBoard.board[4] == 'X' &&
-    GameBoard.board[5] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[6] == 'X' && 
+    GameBoard.board[5] == 'X' ||
+    GameBoard.board[6] == 'X' && 
     GameBoard.board[7] == 'X' &&
-    GameBoard.board[8] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[0] == 'X' && 
+    GameBoard.board[8] == 'X' ||
+    GameBoard.board[0] == 'X' && 
     GameBoard.board[3] == 'X' &&
-    GameBoard.board[6] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[1] == 'X' && 
+    GameBoard.board[6] == 'X' ||
+    GameBoard.board[1] == 'X' && 
     GameBoard.board[4] == 'X' &&
-    GameBoard.board[7] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[2] == 'X' && 
+    GameBoard.board[7] == 'X' ||
+    GameBoard.board[2] == 'X' && 
     GameBoard.board[5] == 'X' &&
-    GameBoard.board[8] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[2] == 'X' && 
+    GameBoard.board[8] == 'X' ||
+    GameBoard.board[2] == 'X' && 
     GameBoard.board[4] == 'X' &&
-    GameBoard.board[6] == 'X') {
-        resultDisplay.textContent = 'Star wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[0] == 'X' && 
+    GameBoard.board[6] == 'X' ||
+    GameBoard.board[0] == 'X' && 
     GameBoard.board[4] == 'X' &&
     GameBoard.board[8] == 'X') {
+        resultDisplay.style.display = 'flex';
         resultDisplay.textContent = 'Star wins!';
-        pointerLock();
+        pointerLock(); 
     }
 
     else if (GameBoard.board[0] == 'O' && 
     GameBoard.board[1] == 'O' &&
-    GameBoard.board[2] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[3] == 'O' && 
+    GameBoard.board[2] == 'O' ||
+    GameBoard.board[3] == 'O' && 
     GameBoard.board[4] == 'O' &&
-    GameBoard.board[5] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[6] == 'O' && 
+    GameBoard.board[5] == 'O' ||
+    GameBoard.board[6] == 'O' && 
     GameBoard.board[7] == 'O' &&
-    GameBoard.board[8] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[0] == 'O' && 
+    GameBoard.board[8] == 'O' ||
+    GameBoard.board[0] == 'O' && 
     GameBoard.board[3] == 'O' &&
-    GameBoard.board[6] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[1] == 'O' && 
+    GameBoard.board[6] == 'O' ||
+    GameBoard.board[1] == 'O' && 
     GameBoard.board[4] == 'O' &&
-    GameBoard.board[7] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[2] == 'O' && 
+    GameBoard.board[7] == 'O' ||
+    GameBoard.board[2] == 'O' && 
     GameBoard.board[5] == 'O' &&
-    GameBoard.board[8] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[2] == 'O' && 
+    GameBoard.board[8] == 'O' ||
+    GameBoard.board[2] == 'O' && 
     GameBoard.board[4] == 'O' &&
-    GameBoard.board[6] == 'O') {
-        resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
-    }
-
-    else if (GameBoard.board[0] == 'O' && 
+    GameBoard.board[6] == 'O' ||
+    GameBoard.board[0] == 'O' && 
     GameBoard.board[4] == 'O' &&
     GameBoard.board[8] == 'O') {
+        resultDisplay.style.display = 'flex';
         resultDisplay.textContent = 'Heart wins!';
-        pointerLock();
+        pointerLock(); 
     }
 
     else if (GameBoard.board[0] !== '' &&
@@ -176,10 +121,10 @@ function gameResult() {
     GameBoard.board[6] !== '' &&
     GameBoard.board[7] !== '' &&
     GameBoard.board[8] !== '') {
+        resultDisplay.style.display = 'flex';
         resultDisplay.textContent = 'Draw!';
         pointerLock();
     }
-
     aContainer.appendChild(resultDisplay);
 }
 
@@ -198,11 +143,11 @@ function endGame(element) {
 function restartGame() {
     clearBoard.forEach(endGame);
     document.body.style.setProperty("--pointer", "all");
+    resultDisplay.textContent = '';
+    resultDisplay.style.display = 'none';
 }
 
 /* toggle pointer lock on game end and game restart */
 function pointerLock() {
     document.body.style.setProperty("--pointer", "none");
   }
-
-  //remove resultdisplay text//

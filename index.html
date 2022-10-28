@@ -9,15 +9,17 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <div id="header">
-        <h1>Tic Tac Toe</h1>
-        <button>Start</button>
-        <button onclick="restartGame()">Restart</button>
-    </div>
 
     <div id="content">
-        <div id="board">
 
+        <div id="header">
+            <h1>Tic Tac Toe</h1>
+            <button onclick="restartGame()">Restart</button>
+            <a href="https://github.com/lisa-go"><img src="./images/github.svg">My Github</a>
+        </div>
+
+        <div id="board">
+                <!--resultDisplay goes here-->
             <grid id="grid0" onclick="placeMarker(0).draw()"></grid>
             <grid id="grid1" onclick="placeMarker(1).draw()"></grid>
             <grid id="grid2" onclick="placeMarker(2).draw()"></grid>
@@ -29,8 +31,7 @@
             <grid id="grid8" onclick="placeMarker(8).draw()"></grid>
 
         </div>
-
-        <!--resultDisplay goes here-->
     </div>
+  
 </body>
 </html>
